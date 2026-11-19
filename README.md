@@ -25,6 +25,7 @@ Owner: Izabayo Simeon | Balance: 1366 RWF
 Student card: 10% off
 
 ## Part 1: Why no setter for balance?
+
 If balance had a setter, anyone could write `card.balance = 1000000` and
 give themselves free money. The balance should only change through `topUp`
 and `pay`, because those two methods check the rules (top-up from 500 to
@@ -57,11 +58,54 @@ Why: `a.add()` makes `_items` 1. `a.items = -5` is refused because the setter
 only accepts values that are 0 or more, so `a.items` is still 1. For `b`, a
 `BigBag` overrides `add()` and calls `super.add()` twice, so each `add()` adds
 2. Two calls make 4, and then `b.items = b.items + 1` sets it to 5 (allowed).
- 
-Real output: (paste after running `dart run main.dart` on the Part 5 code)
-Was I right?: (write after running)
 
+ ##Part 5
+### My prediction
 
+```text
+1
+5
+```
+
+The first `Bag` starts at 0. `add()` makes it 1. Assigning `-5` is rejected by the setter because it only accepts values at least 0, so it remains 1.
+
+`BigBag.add()` calls the parent's `add()` twice, so the items become 2. Then `b.items = b.items + 1` adds one more, giving 5.
+
+### Real output
+
+```text
+1
+5
+```
+
+### Was I right?
+
+Yes. My prediction matched the real output.
+
+## GitHub commit checklist
+
+Make at least these 5 commits, as required:
+
+1. `Part 1: BusCard`
+2. `Part 2 and 3: StudentCard and main`
+3. `Part 4: bug hunt fixed`
+4. `Part 5: prediction`
+5. `Part 5: real output and README`
+
+## How to run
+
+From the project directory:
+
+```bash
+dart run main.dart
+dart run bug_hunt.dart
+```
+
+For Part 5, create a separate file with the Bag/BigBag code from the assignment, commit your prediction first, then run it and add the real output to this README.
+
+## Submission
+
+Repository name: `dart-oop-26160`
 
 
 
