@@ -80,7 +80,8 @@ The first `Bag` starts at 0. `add()` makes it 1. Assigning `-5` is rejected by t
 
 ### Was I right?
 
-Yes. My prediction matched the real output.
+
+Yes. My prediction was correct because the actual output matches my prediction.
 
 ## GitHub commit checklist
 
