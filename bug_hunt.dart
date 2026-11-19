@@ -1,8 +1,8 @@
 // Dart OOP Bug Hunt Assignment
  // Student: Izabayo Simeon
 //Reg:26160/2024
- d=0
-t=60
+ //d=0
+//t=60
 
 class Phone {
   // FIX 1: Initialize fields
